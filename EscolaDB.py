@@ -2,7 +2,7 @@ from pprintpp import pprint as pp
 from db.database import Graph
 
 
-class PersonDAO(object):
+class Person(object):
     def __init__(self):
         self.db = Graph(uri='bolt://34.201.33.19:7687',
                         user='neo4j', password='bend-humps-force')
@@ -17,4 +17,5 @@ class PersonDAO(object):
     
     def create_relation(self, teacher, classes, year):
         return self.db.execute_query('MATCH (n:Teacher {name:$name}), (m:Classes {topic:$topic}) CREATE (n)-[r:TEACH{year: $year}]->(m) RETURN n, r, m',
-                                     {'name': teacher['name'], 'topic': classes['topic'], 'year': year})                                                                  
+                                     {'name': teacher['name'], 'topic': classes['topic'], 'year': year})   
+
