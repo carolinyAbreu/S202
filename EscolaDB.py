@@ -18,7 +18,3 @@ class Person(object):
     def create_relation(self, teacher, classes, year):
         return self.db.execute_query('MATCH (n:Teacher {name:$name}), (m:Classes {topic:$topic}) CREATE (n)-[r:TEACH{year: $year}]->(m) RETURN n, r, m',
                                      {'name': teacher['name'], 'topic': classes['topic'], 'year': year})   
-
-    def read_relation(self, teacher, classes):
-        return self.db.execute_query('MATCH (n:Teacher {name:$name})-[r]->(m:Classes {topic:$topic}) RETURN n, r, m',
-                                     {'name': teacher['name'], 'topic': classes['topic']})
