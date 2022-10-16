@@ -4,8 +4,8 @@ from db.database import Graph
 
 class PersonDAO(object):
     def __init__(self):
-        self.db = Graph(uri='bolt://52.91.64.64:7687',
-                        user='neo4j', password='board-apparatuses-smashes')
+        self.db = Graph(uri='bolt://34.201.33.19:7687',
+                        user='neo4j', password='bend-humps-force')
 
     def create(self, person):
         return self.db.execute_query('CREATE (n:Person {name:$name, age:$age}) return n',
