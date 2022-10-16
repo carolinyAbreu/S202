@@ -49,9 +49,6 @@ dao.createClass(classes)
 
 #CRIANDO RELACIONAMENTO
 
-teacher = {'name': 'Renzo'}
-classes = {'topic': 'Banco de dados, Banco de dados 2 e Linguagens de Programação e Compiladores'}
-year = {'year': 2013}
-    
+year = 2013
 
 dao.create_relation(teacher, classes, year)
